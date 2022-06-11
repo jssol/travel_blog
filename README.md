@@ -1,24 +1,75 @@
-# README
+# Rails: Travel Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Things you may want to cover:
+> A travel blog built for fun while learning a framework of the language that makes programmers happy - Rails.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby, Rails
+- Irb, Pry
+- Gitflow
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+You need to have these tools installed:
 
-* How to run the test suite
+- Ruby
+- Rails
+- Git
 
-* Services (job queues, cache servers, search engines, etc.)
+### Setup
 
-* Deployment instructions
+To get a local copy up and running follow these simple example steps:
 
-* ...
+```
+git clone git@github.com:jssol/travel_blog.git
+```
+
+```
+cd travel_blog
+```
+
+### Usage
+
+To run the app locally do:
+
+```
+rails s
+```
+
+### Run tests
+
+To run tests in terminal use:
+
+```
+rspec
+```
+
+## Author
+
+👤 **Jonathan Sivahera**
+
+- GitHub: [@jssol](https://github.com/jssol)
+- Twitter: [@jsivahera](https://twitter.com/jsivahera)
+- LinkedIn: [jsivahera](https://linkedin.com/in/jsivahera)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+This project uses the OMDb API
+
+## 📝 License
+
+This project is [AGPL-3.0](./LICENSE) licensed.
