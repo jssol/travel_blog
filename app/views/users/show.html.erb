@@ -1,1 +1,19 @@
-<h1>Here is a single given user page</h1>
+<section class="w-full flex items-center gap-2 border-2 p-4">
+  <%= render "shared/user_headline" %>
+</section>
+<section class="w-full flex flex-col gap-2 border-2 p-4">
+  <h2 class="text-xl font-bold">Bio</h2>
+  <p><%= @user.bio %></p>
+</section>
+<ul class="w-full flex flex-col gap-2 p-4">
+  <% User.latest_posts(@user).each do |post| %>
+    <li class="border-2 p-2">
+      <p class="text-md font-semibold">Post #<%= post.id %>: <%= post.title %></p>
+      <p><%= post.text %></p>
+      <div class="w-3/6 flex items-center gap-8">
+        <p>Comments: <%= post.comments_counter %></p>
+        <p>Likes: <%= post.likes_counter %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

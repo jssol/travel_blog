@@ -1,1 +1,26 @@
-<h1>Here is a list of posts for a given user</h1>
+<section class="w-full flex items-center gap-2 border-2 p-4">
+  <img class="w-24 h-24" src=<%= User.find(params[:user_id]).photo %> alt=<%= User.find(params[:user_id]).name %> />
+  <div>
+  <p>Name: <%= User.find(params[:user_id]).name %></p>
+  <p>Number of posts: <%= User.find(params[:user_id]).posts_counter %></p>
+  </div>
+</section>
+<ul class="w-full flex flex-col gap-2 p-4">
+  <% @user_posts.each do |post| %>
+    <li class="border-2 p-2">
+      <div>
+        <p class="text-md font-semibold">Post #<%= post.id %>: <%= post.title %></p>
+        <p><%= post.text %></p>
+        <div class="w-3/6 flex items-center gap-8">
+          <p>Comments: <%= post.comments_counter %></p>
+          <p>Likes: <%= post.likes_counter %></p>
+        </div>
+      </div>
+      <ul class="w-full flex flex-col gap-2 p-4">
+        <% Post.latest_comments(post).each do |comment| %>
+          <li class="border-2 p-2"><%= User.find(comment.author_id).name %>: <%= comment.text %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
