@@ -1,1 +1,18 @@
-<h1>Here is a single post made by a given user</h1>
+<div class="w-full flex flex-col gap-2 p-4 border-2 p-2">
+  <div>
+    <p class="text-md font-semibold">Post #<%= @post.id %> by <%= User.find(@post.author_id).name %></p>
+    <div class="w-3/6 flex items-center gap-8">
+      <p>Comments: <%= @post.comments_counter %></p>
+      <p>Likes: <%= @post.likes_counter %></p>
+    </div>
+  </div>
+  <div>
+    <h2 class="text-xl font-bold"><%= @post.title %></h2>
+    <p><%= @post.text %></p>
+  </div>
+</div>
+<ul class="w-full flex flex-col gap-2 p-4">
+<% Post.latest_comments(@post).each do |comment| %>
+<li class="border-2 p-2"><%= User.find(comment.author_id).name %>: <%= comment.text %></li>
+<% end %>
+</ul>

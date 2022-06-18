@@ -1,1 +1,11 @@
-<h1>Here is a list of all the users</h1>
+<ul class="w-1/4 flex flex-col gap-4">
+  <% @users.each do |user| %>
+    <li class="flex items-center gap-2 border-2 p-4">
+      <img class="w-24 h-24" src=<%= user.photo %> alt=<%= user.name %> />
+      <div>
+        <p>Name: <%= user.name %></p>
+        <p>Number of posts: <%= user.posts_counter %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
