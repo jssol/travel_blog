@@ -6,4 +6,12 @@ class PostsController < ApplicationController
   def show
     @post = Post.where(author_id: params[:user_id]).find(params[:id])
   end
+
+  def new
+
+  end
+
+  def create
+
+  end
 end
