@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> A travel blog built for fun while learning a framework of the language that makes programmers happy - Rails.
+> A travel blog built for fun while learning a framework of the language that makes programmers happy - Rails
 
 ## Built With
 
