@@ -1,6 +1,6 @@
 # Rails: Travel Blog
 
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![Microverse-blueviolet-badge](https://img.shields.io/badge/Microverse-blueviolet)
 
 > A travel blog built for fun while learning a framework of the language that makes programmers happy - Rails.
 
@@ -24,11 +24,11 @@ You need to have these tools installed:
 
 To get a local copy up and running follow these simple example steps:
 
-```
+```bash
 git clone git@github.com:jssol/travel_blog.git
 ```
 
-```
+```bash
 cd travel_blog
 ```
 
@@ -36,7 +36,7 @@ cd travel_blog
 
 To run the app locally do:
 
-```
+```bash
 rails s
 ```
 
@@ -44,7 +44,7 @@ rails s
 
 To run tests in terminal use:
 
-```
+```bash
 rspec
 ```
 
