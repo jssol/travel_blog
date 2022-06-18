@@ -7,11 +7,7 @@ class PostsController < ApplicationController
     @post = Post.where(author_id: params[:user_id]).find(params[:id])
   end
 
-  def new
+  def new; end
 
-  end
-
-  def create
-
-  end
+  def create; end
 end
