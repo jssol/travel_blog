@@ -8,6 +8,9 @@
 <button class="bg-blue-500 text-white p-2 my-1" type="button">
   <%= link_to 'New Post', new_user_post_path %>
 <button>
+<button class="bg-blue-500 text-white p-2 my-1" type="button">
+  <%= link_to 'New Comment', new_user_comment_path %>
+<button>
 <ul class="w-full flex flex-col gap-2 p-4">
   <% @user_posts.each do |post| %>
     <li class="border-2 p-2">
