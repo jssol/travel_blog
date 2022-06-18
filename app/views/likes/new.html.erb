@@ -1,0 +1,10 @@
+<%= form_with model: @like, url: user_likes_url do |f| %>
+  <div>
+    <%= f.label :like %><br>
+    <%= f.text_field :like %>
+  </div>
+
+  <div class="bg-green-500 text-white">
+    <%= f.submit "Like" %>
+  </div>
+<% end %>
