@@ -5,7 +5,6 @@ class Comment < ApplicationRecord
   after_save :update_post_comments_count
 
   def update_post_comments_count
-    post_comments_count = Comment.where(post_id: post.id).count
-    post.comments_counter = post_comments_count
+    post.increment!(:comments_counter)
   end
 end

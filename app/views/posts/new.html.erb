@@ -1,3 +1,15 @@
-<%= form_with url: new_user_post_url, method: :post, local: true do %>
-  # TODO: Add fields
+<%= form_with model: @post, url: user_posts_url do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="bg-green-500 text-white">
+    <%= f.submit "Add Post" %>
+  </div>
 <% end %>
