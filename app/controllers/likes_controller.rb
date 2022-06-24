@@ -2,15 +2,16 @@ class LikesController < ApplicationController
   def new
     @like = Like.new
     @user = current_user
-    @post = Post.first
+    @post = Post.find(params[:post_id])
     respond_to do |format|
-      format.html { render :new, locals: { like: @like } }
+      format.html { render :new, locals: { like: @like, post: @post } }
     end
   end
 
   def create
     # new object from params
     @like = Like.new(post_params)
+    @post = Post.find(params[:post_id])
 
     # respond_to block
     respond_to do |format|
@@ -25,7 +26,7 @@ class LikesController < ApplicationController
         else
           flash.now[:error] = 'Error: Like could not be added'
           # render new
-          render :new, locals: { like: @like }
+          render :new, locals: { like: @like, post: @post }
         end
       end
     end
@@ -36,7 +37,7 @@ class LikesController < ApplicationController
   def post_params
     post_params = params.require(:like).permit(:text)
     post_params[:author_id] = current_user.id
-    post_params[:post_id] = Post.first.id
+    post_params[:post_id] = Post.find(params[:post_id])
     post_params
   end
 end

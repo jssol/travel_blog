@@ -1,10 +1,10 @@
-<%= form_with model: @comment, url: user_comments_url do |f| %>
+<%= form_with model: @comment, url: user_comments_url(post_id: @comment.post_id) do |f| %>
   <div>
     <%= f.label :text %><br>
     <%= f.text_field :text %>
   </div>
 
   <div class="bg-green-500 text-white">
-    <%= f.submit "Add Comment" %>
+    <%= f.submit "Comment" %>
   </div>
 <% end %>
