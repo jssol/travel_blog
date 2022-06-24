@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
       format.html do
         if @comment.save
           # success message
-          Comment.update_post_comments_count(@post)
           flash[:success] = 'Comment created successfully'
           # redirect to index
           redirect_to user_post_url(id: post_params[:post_id])

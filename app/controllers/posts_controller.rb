@@ -25,7 +25,6 @@ class PostsController < ApplicationController
         if @post.save
           # success message
           user = User.find(post_params[:author_id])
-          Post.update_user_posts_count(user)
           flash[:success] = 'Post created successfully'
           # redirect to index
           redirect_to user_posts_url
