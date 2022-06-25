@@ -24,7 +24,6 @@ class PostsController < ApplicationController
       format.html do
         if @post.save
           # success message
-          user = User.find(post_params[:author_id])
           flash[:success] = 'Post created successfully'
           # redirect to index
           redirect_to user_posts_url
