@@ -10,7 +10,7 @@
   <%= link_to 'New Post', new_user_post_path %>
 <button>
 <ul class="w-full flex flex-col gap-2 p-4">
-  <% @user_posts.each do |post| %>
+  <% @posts.each do |post| %>
     <li class="border-2 p-2">
       <div>
         <p class="text-md font-semibold">Post #<%= post.id %>: <%= post.title %></p>

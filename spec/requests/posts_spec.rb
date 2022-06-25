@@ -3,15 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'tests the #index action' do
     before(:each) do
-      get '/users/12/posts'
+      get '/users/1/posts'
     end
 
     it 'should render the correct template' do
       expect(response).to render_template(:index)
-    end
-
-    it 'should have the correct placeholder text' do
-      expect(response.body).to include('Here is a list of posts for a given user')
     end
 
     it 'should have a correct response status' do
@@ -21,15 +17,11 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'tests the #show action' do
     before(:each) do
-      get '/users/12/posts/11'
+      get '/users/1/posts/1'
     end
 
     it 'should render the correct template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'should have the correct placeholder text' do
-      expect(response.body).to include('Here is a single post made by a given user')
     end
 
     it 'should have a correct response status' do
