@@ -1,3 +1,4 @@
+<%= link_to "Back", users_path, class: 'bg-gray-500 rounded-sm text-white self-start p-1 mb-2' %>
 <section class="w-full flex items-center gap-2 border-2 p-4">
   <%= render "shared/user_headline" %>
 </section>
@@ -17,3 +18,4 @@
     </li>
   <% end %>
 </ul>
+<%= link_to "More Posts", user_posts_path(user_id: @user.id), class: 'bg-blue-500 rounded-sm self-center text-white p-1' %>

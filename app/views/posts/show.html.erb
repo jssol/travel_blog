@@ -1,3 +1,4 @@
+<%= link_to "Back", user_posts_path, class: 'bg-gray-500 rounded-sm text-white self-start p-1 mb-2' %>
 <div class="w-full flex flex-col gap-2 p-4 border-2 p-2">
   <div>
     <p class="text-md font-semibold">Post #<%= @post.id %> by <%= User.find(@post.author_id).name %></p>
@@ -10,6 +11,12 @@
     <h2 class="text-xl font-bold"><%= @post.title %></h2>
     <p><%= @post.text %></p>
   </div>
+</div>
+<div class="flex gap-2 items-center">
+  <%= button_to 'Like', user_likes_url(post_id: @post.id), class: "bg-blue-500 text-white p-2 my-1" %>
+  <button class="bg-blue-500 text-white p-2 my-1" type="button">
+    <%= link_to 'Comment', new_user_comment_path(post_id: @post.id) %>
+  <button>
 </div>
 <ul class="w-full flex flex-col gap-2 p-4">
 <% Post.latest_comments(@post).each do |comment| %>

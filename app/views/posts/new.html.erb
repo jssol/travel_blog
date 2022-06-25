@@ -1,0 +1,16 @@
+<%= link_to "Back", user_posts_path, class: 'bg-gray-500 rounded-sm text-white self-start p-1 mb-2' %>
+<%= form_with model: @post, url: user_posts_url, class: 'flex flex-col gap-1 items-center mt-24 border-2 p-4' do |f| %>
+  <div class="flex gap-3">
+    <%= f.label :title, class: 'text-semibold' %>
+    <%= f.text_field :title, class: 'border-1 shadow-md p-1 outline-blue-500' %>
+  </div>
+
+  <div class="flex gap-3">
+    <%= f.label :text, class: 'text-semibold' %>
+    <%= f.text_field :text, class: 'border-1 shadow-md h-16 outline-blue-500 p-1' %>
+  </div>
+
+  <div class="bg-green-500 mt-4 rounded-sm p-2 text-white">
+    <%= f.submit "Post" %>
+  </div>
+<% end %>

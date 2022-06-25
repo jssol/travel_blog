@@ -1,3 +1,4 @@
+<%= link_to "Back", user_path(id: params[:user_id]), class: 'bg-gray-500 rounded-sm text-white self-start p-1 mb-2' %>
 <section class="w-full flex items-center gap-2 border-2 p-4">
   <img class="w-24 h-24" src=<%= User.find(params[:user_id]).photo %> alt=<%= User.find(params[:user_id]).name %> />
   <div>
@@ -5,6 +6,9 @@
   <p>Number of posts: <%= User.find(params[:user_id]).posts_counter %></p>
   </div>
 </section>
+<button class="bg-blue-500 text-white p-2 my-1" type="button">
+  <%= link_to 'New Post', new_user_post_path %>
+<button>
 <ul class="w-full flex flex-col gap-2 p-4">
   <% @user_posts.each do |post| %>
     <li class="border-2 p-2">
@@ -21,6 +25,7 @@
           <li class="border-2 p-2"><%= User.find(comment.author_id).name %>: <%= comment.text %></li>
         <% end %>
       </ul>
+      <%= link_to "See Post", user_post_path(user_id: params[:user_id], id: post.id), class: 'bg-blue-500 rounded-sm self-center text-white p-1' %>
     </li>
   <% end %>
 </ul>
