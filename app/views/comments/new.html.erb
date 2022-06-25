@@ -1,3 +1,4 @@
+<%= link_to "Back", user_post_path(id: params[:user_id]), class: 'bg-gray-500 rounded-sm text-white self-start p-1 mb-2' %>
 <%= form_with model: @comment, url: user_comments_url(post_id: @comment.post_id), class: 'flex flex-col gap-1 items-center mt-24 border-2 p-4' do |f| %>
   <div class="flex gap-3">
     <%= f.label :text, class: 'text-semibold' %>

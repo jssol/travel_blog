@@ -1,3 +1,4 @@
+<%= link_to "Back", user_posts_path, class: 'bg-gray-500 rounded-sm text-white self-start p-1 mb-2' %>
 <div class="w-full flex flex-col gap-2 p-4 border-2 p-2">
   <div>
     <p class="text-md font-semibold">Post #<%= @post.id %> by <%= User.find(@post.author_id).name %></p>
