@@ -5,6 +5,10 @@ class Post < ApplicationRecord
 
   after_save :update_post_counter
 
+  validates :title, presence: true, allow_blank: false, length: { maximum: 250 }
+  validates :comments_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+
   def self.latest_comments(post)
     Comment.where(post_id: post.id).limit(5).order(created_at: :desc)
   end
