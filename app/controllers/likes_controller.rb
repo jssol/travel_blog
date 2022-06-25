@@ -5,7 +5,13 @@ class LikesController < ApplicationController
 
   def create
     # new object from params
-    Like.create(author_id: current_user.id, post_id: params[:post_id])
-    redirect_to user_post_url(id: params[:post_id])
+    @like = Like.new(author_id: current_user.id, post_id: params[:post_id])
+
+    if @like.save
+      flash[:success] = 'Liked'
+      redirect_to user_post_url(id: params[:post_id])
+    else
+      flash.now[:error] = 'Like was not added'
+    end
   end
 end
